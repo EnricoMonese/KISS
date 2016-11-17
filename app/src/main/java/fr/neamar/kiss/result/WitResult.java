@@ -29,11 +29,11 @@ public class WitResult extends Result {
     @Override
     public View display(Context context, int position, View v) {
         if (v == null)
-            v = inflateFromId(context, R.layout.item_phone);
+            v = inflateFromId(context, R.layout.item_wit);
 
-        TextView appName = (TextView) v.findViewById(R.id.item_phone_text);
-        String text = context.getString(R.string.ui_item_phone);
-        appName.setText(enrichText(String.format(text, "{" + witPojo.phone + "}")));
+        TextView appName = (TextView) v.findViewById(R.id.item_wit_text);
+        String text = context.getString(R.string.ui_item_wit);
+        appName.setText(enrichText(String.format(text, "{" + witPojo.phrase + "}")));
 
         ((ImageView) v.findViewById(R.id.item_phone_icon)).setColorFilter(getThemeFillColor(context), PorterDuff.Mode.SRC_IN);
 
@@ -53,12 +53,12 @@ public class WitResult extends Result {
                 // Create a new contact with this phone number
                 Intent createIntent = new Intent(Intent.ACTION_INSERT);
                 createIntent.setType(ContactsContract.Contacts.CONTENT_TYPE);
-                createIntent.putExtra(ContactsContract.Intents.Insert.PHONE, witPojo.phone);
+                createIntent.putExtra(ContactsContract.Intents.Insert.PHONE, witPojo.phrase);
                 createIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(createIntent);
                 return true;
             case R.id.item_phone_sendmessage:
-                String url = "sms:" + witPojo.phone;
+                String url = "sms:" + witPojo.phrase;
                 Intent messageIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse(url));
                 messageIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(messageIntent);
@@ -71,7 +71,7 @@ public class WitResult extends Result {
     @Override
     public void doLaunch(Context context, View v) {
         Intent phone = new Intent(Intent.ACTION_CALL);
-        phone.setData(Uri.parse("tel:" + Uri.encode(witPojo.phone)));
+        phone.setData(Uri.parse("tel:" + Uri.encode(witPojo.phrase)));
 
         phone.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 

@@ -5,6 +5,7 @@
     <string name="ui_search_hint">Search apps, contacts, …</string>
     <string name="ui_item_search">Search %1$s for “%2$s”</string>
     <string name="ui_item_phone">Call “%s”</string>
+    <string name="ui_item_wit">Wit: “%s”</string>
     <string name="ui_item_contact_hint_message">Message</string>
     <string name="ui_item_contact_hint_call">Call</string>
 
