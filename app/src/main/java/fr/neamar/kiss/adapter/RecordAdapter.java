@@ -20,6 +20,7 @@ import fr.neamar.kiss.result.SearchResult;
 import fr.neamar.kiss.result.SettingsResult;
 import fr.neamar.kiss.result.ShortcutsResult;
 import fr.neamar.kiss.result.TogglesResult;
+import fr.neamar.kiss.result.WitResult;
 import fr.neamar.kiss.searcher.QueryInterface;
 
 public class RecordAdapter extends ArrayAdapter<Result> {
@@ -39,7 +40,7 @@ public class RecordAdapter extends ArrayAdapter<Result> {
     }
 
     public int getViewTypeCount() {
-        return 7;
+        return 8;
     }
 
     public int getItemViewType(int position) {
@@ -57,6 +58,8 @@ public class RecordAdapter extends ArrayAdapter<Result> {
             return 5;
         else if (results.get(position) instanceof ShortcutsResult)
             return 6;
+        else if (results.get(position) instanceof WitResult)
+            return 7;
         else
             return -1;
     }

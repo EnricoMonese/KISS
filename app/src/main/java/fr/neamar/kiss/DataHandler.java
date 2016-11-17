@@ -26,12 +26,14 @@ import fr.neamar.kiss.dataprovider.IProvider;
 import fr.neamar.kiss.dataprovider.Provider;
 import fr.neamar.kiss.dataprovider.SearchProvider;
 import fr.neamar.kiss.dataprovider.ShortcutsProvider;
+import fr.neamar.kiss.dataprovider.WitProvider;
 import fr.neamar.kiss.db.DBHelper;
 import fr.neamar.kiss.db.ShortcutRecord;
 import fr.neamar.kiss.db.ValuedHistoryRecord;
 import fr.neamar.kiss.pojo.Pojo;
 import fr.neamar.kiss.pojo.PojoComparator;
 import fr.neamar.kiss.pojo.ShortcutsPojo;
+import fr.neamar.kiss.pojo.WitPojo;
 
 public class DataHandler extends BroadcastReceiver
         implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -39,7 +41,7 @@ public class DataHandler extends BroadcastReceiver
      * List all known providers
      */
     final static private List<String> PROVIDER_NAMES = Arrays.asList(
-            "alias", "app", "contacts", "phone", "search", "settings", "shortcuts", "toggles"
+            "alias", "app", "contacts", "phone", "search", "settings", "shortcuts", "toggles", "wit"
     );
 
     final private Context context;
