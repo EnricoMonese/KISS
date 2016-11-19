@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
 
-    <string name="app_name">KISS Launcher</string>
+    <string name="app_name">KISS Launcher con Wit</string>
     <string name="activity_setting">Impostazioni di KISS</string>
     <string name="ui_search_hint">Cerca applicazioni, contatti, …</string>
     <string name="ui_item_search">Cerca con %1$s: “%2$s”</string>

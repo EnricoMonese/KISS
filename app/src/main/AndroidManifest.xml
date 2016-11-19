@@ -41,6 +41,8 @@
     <!-- To autorotation toggle -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
@@ -165,6 +167,7 @@
         <service android:name=".dataprovider.SettingsProvider" />
         <service android:name=".dataprovider.ShortcutsProvider" />
         <service android:name=".dataprovider.TogglesProvider" />
+        <service android:name=".dataprovider.WitProvider" />
     </application>
 
 </manifest>

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.net.NetworkInfo;
 
 import java.util.ArrayList;
-import java.util.regex.Pattern;
 
 import fr.neamar.kiss.loader.LoadWitPojos;
 import fr.neamar.kiss.pojo.WitPojo;
@@ -28,13 +27,14 @@ public class WitProvider extends Provider<WitPojo> {
 
         // Append an item only if connected to internet
         if (hasInternet) {
-            pojos.add(getResult(query));
+            try {
+                pojos.add(getResult(query));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-
         return pojos;
     }
-
-
 
     private Pojo getResult(String phrase) {
         WitPojo pojo = new WitPojo();

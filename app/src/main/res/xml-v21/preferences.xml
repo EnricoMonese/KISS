@@ -133,6 +133,10 @@
             android:defaultValue="true"
             android:key="enable-shortcuts"
             android:title="@string/shortcuts_name" />
+        <fr.neamar.kiss.SwitchPreference
+            android:defaultValue="true"
+            android:key="enable-wit"
+            android:title="@string/wit_name" />
     </PreferenceScreen>
     <PreferenceScreen android:title="@string/title_advanced">
         <ListPreference

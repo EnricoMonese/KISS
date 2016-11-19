@@ -30,6 +30,7 @@ import fr.neamar.kiss.pojo.SearchPojo;
 import fr.neamar.kiss.pojo.SettingsPojo;
 import fr.neamar.kiss.pojo.ShortcutsPojo;
 import fr.neamar.kiss.pojo.TogglesPojo;
+import fr.neamar.kiss.pojo.WitPojo;
 import fr.neamar.kiss.searcher.QueryInterface;
 
 public abstract class Result {
@@ -53,6 +54,8 @@ public abstract class Result {
             return new PhoneResult((PhonePojo) pojo);
         else if (pojo instanceof ShortcutsPojo)
             return new ShortcutsResult((ShortcutsPojo) pojo);
+        else if (pojo instanceof WitPojo)
+            return new WitResult((WitPojo) pojo);
 
 
         throw new RuntimeException("Unable to create a result from POJO");
